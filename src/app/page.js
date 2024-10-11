@@ -5,22 +5,27 @@ const services = [
   {
     title: 'MECKNOWN',
     description: '3D Product Visualization: A sleek and dynamic video showcasing a study-purpose tablet. This visualization highlights the tablet’s features and design.',
-    image: 'https://framerusercontent.com/images/YnkMBFBZnuisO1OW3YEL0DPbYQ.jpg'
+    image: 'https://framerusercontent.com/images/YnkMBFBZnuisO1OW3YEL0DPbYQ.jpg',
+    url:"https://youtu.be/HEiExhAbZik"
   },
   {
     title: 'CGI ADVERTISING',
     description: 'CGI Advertising: A dynamic video using CGI and visual effects to create an engaging and impactful advertisement.',
-    image: 'https://framerusercontent.com/images/Qe7HtUKsKC0CBmd8m3u4Zk2aak.jpg?scale-down-to=1024'
+    image: 'https://framerusercontent.com/images/Qe7HtUKsKC0CBmd8m3u4Zk2aak.jpg?scale-down-to=1024',
+    url:"https://youtu.be/XNVKN2-w9Ro?si=YktA0mO7K1WBIEI2"
   },
   {
     title: 'KEYBOARD',
     description: '3D Product Visualization: A sleek, dynamic showcase of a modern keyboard, highlighting its design and functionality through precise 3D animation.',
-    image: 'https://framerusercontent.com/images/RARaiijDtzGsC5nJaYJFD3qKKC0.jpg?scale-down-to=1024'
+    image: 'https://framerusercontent.com/images/RARaiijDtzGsC5nJaYJFD3qKKC0.jpg?scale-down-to=1024',
+    url:"https://youtu.be/QucnNVsYaI8?si=P_ulHSPkzqeaEDXN"
   },
   {
     title: 'WEBSITE VISUALIZATION',
     description: 'Website Showcase: A captivating video designed to showcase the features and user experience of a website, presented with sleek visuals and smooth transitions.',
-    image: 'https://framerusercontent.com/images/hR7GseSERzKZOHLW1AYKjzmyDUg.jpg'
+    image: 'https://framerusercontent.com/images/hR7GseSERzKZOHLW1AYKjzmyDUg.jpg',
+    url:'https://youtu.be/UYUwjp9e3Ws?si=Ihw5p9B_lhMRoPS9'
+    
   }
 ]
 
@@ -72,7 +77,7 @@ export default function Component() {
         <section className="grid grid-cols-1 gap-8 mb-20">
           {services.map((service, index) => (
             <div key={index} className="bg-[#101010] rounded-lg overflow-hidden flex flex-col md:flex-row">
-              <img src={service.image} alt={service.title} className="w-full md:w-1/2 h-48 md:h-auto object-cover" />
+              <img onClick={() => {window.open(service.url)}} src={service.image} alt={service.title} className="w-full md:w-1/2 h-48 md:h-auto object-cover cursor-pointer" />
               <div className="p-6 md:w-1/2 flex flex-col justify-center">
                 <h2 className="text-xl font-bold mb-2 text-white">{service.title}</h2>
                 <p className="text-gray-400 text-sm">{service.description}</p>
