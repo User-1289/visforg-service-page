@@ -115,7 +115,7 @@ export default function Component() {
 
       <footer className="bg-[#101010] text-center py-12 px-6">
         <p className="text-xl mb-4 text-white">Interested in working with us?</p>
-        <button onClick={() => {window.open("mailto:contact@visforg.com")}} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full text-sm mb-8">
+        <button onClick={() => {window.open("mailto:contact@visforg.tech")}} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full text-sm mb-8">
           Contact Us
         </button>
         <p className="text-xs text-gray-500">&copy; VisForg. All rights reserved.</p>
