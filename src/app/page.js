@@ -5,34 +5,45 @@ import Image from 'next/image'
 import logo from '../assets/logo.png'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ChevronRight, Menu, X, Play } from 'lucide-react'
+import { ChevronRight, Menu, X } from 'lucide-react'
 
 const services = [
   {
-    title: 'MECKNOWN',
+    title: 'Product Visualization for Tablet',
     description: '3D Product Visualization: A sleek and dynamic video showcasing a study-purpose tablet. This visualization highlights the tablet’s features and design.',
-    image: 'https://framerusercontent.com/images/YnkMBFBZnuisO1OW3YEL0DPbYQ.jpg',
-    url:"https://youtu.be/HEiExhAbZik"
+    url: 'https://youtu.be/HEiExhAbZik',
+    iframe: 'https://www.youtube.com/embed/HEiExhAbZik'
   },
   {
-    title: 'CGI ADVERTISING',
+    title: 'CGI Advertising',
     description: 'CGI Advertising: A dynamic video using CGI and visual effects to create an engaging and impactful advertisement.',
-    image: 'https://framerusercontent.com/images/Qe7HtUKsKC0CBmd8m3u4Zk2aak.jpg?scale-down-to=1024',
-    url:"https://youtu.be/XNVKN2-w9Ro?si=YktA0mO7K1WBIEI2"
+    url: 'https://youtu.be/XNVKN2-w9Ro?si=YktA0mO7K1WBIEI2',
+    iframe: 'https://www.youtube.com/embed/XNVKN2-w9Ro?si=YktA0mO7K1WBIEI2'
   },
   {
-    title: 'KEYBOARD',
+    title: 'Laptop Product Visualization',
     description: '3D Product Visualization: A sleek, dynamic showcase of a modern keyboard, highlighting its design and functionality through precise 3D animation.',
-    image: 'https://framerusercontent.com/images/RARaiijDtzGsC5nJaYJFD3qKKC0.jpg?scale-down-to=1024',
-    url:"https://youtu.be/QucnNVsYaI8?si=P_ulHSPkzqeaEDXN"
+    url: 'https://youtu.be/QucnNVsYaI8?si=P_ulHSPkzqeaEDXN',
+    iframe: 'https://www.youtube.com/embed/QucnNVsYaI8?si=P_ulHSPkzqeaEDXN'
   },
   {
-    title: 'WEBSITE VISUALIZATION',
+    title: 'Website Showcase',
     description: 'Website Showcase: A captivating video designed to showcase the features and user experience of a website, presented with sleek visuals and smooth transitions.',
-    image: 'https://framerusercontent.com/images/hR7GseSERzKZOHLW1AYKjzmyDUg.jpg',
-    url:'https://youtu.be/UYUwjp9e3Ws?si=Ihw5p9B_lhMRoPS9'
-    
-  }
+    url: 'https://youtu.be/UYUwjp9e3Ws?si=Ihw5p9B_lhMRoPS9',
+    iframe: 'https://www.youtube.com/embed/UYUwjp9e3Ws?si=Ihw5p9B_lhMRoPS9'
+  },
+  {
+    title: 'Website Product Feature Showcase',
+    description: 'Website Feature Showcase: A dynamic video highlighting the features of a website, designed to engage viewers with smooth transitions and captivating visuals.',
+    url: 'https://youtu.be/8qoZ926r3Ug?si=dROxzok_Sj6wESi4',
+    iframe: 'https://www.youtube.com/embed/8qoZ926r3Ug?si=dROxzok_Sj6wESi4'
+  },
+  {
+    title: 'SaaS Demo',
+    description: 'Website Demo: A sleek and engaging video showcasing a SaaS product, designed to highlight its features and user experience through smooth transitions and captivating visuals.',
+    url: 'https://youtu.be/VsV3TXTCF0M?si=h-gwsitZjy6joOmY',
+    iframe: 'https://www.youtube.com/embed/VsV3TXTCF0M?si=8QCNmX31Ulji-UPL'
+  },
 ]
 
 const offerings = [
@@ -145,13 +156,17 @@ export default function Component() {
           <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
             {services.map((service, index) => (
               <div key={index} className="bg-[#101010] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <div className="relative">
-                  <img src={service.image} alt={service.title} width={600} height={400} className="w-full h-64 object-cover" />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                    <button onClick={() => {window.open(service.url)}} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center">
-                      Watch Demo <Play size={16} className="ml-2" />
-                    </button>
-                  </div>
+                <div className="w-full h-64">
+                  <iframe
+                    src={service.iframe}
+                    title={service.title}
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-2 text-white">{service.title}</h2>
