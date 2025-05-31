@@ -124,6 +124,14 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setIsMenuOpen(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="fixed w-full z-50">
@@ -139,10 +147,10 @@ export default function Component() {
               />
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-sm font-medium hover:text-primary transition-colors duration-300">Home</a>
-              <a href="#" className="text-sm font-medium hover:text-primary transition-colors duration-300">About</a>
-              <a href="#" className="text-sm font-medium hover:text-primary transition-colors duration-300">Services</a>
-              <a href="#" className="text-sm font-medium hover:text-primary transition-colors duration-300">Contact</a>
+              <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Home</button>
+              <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-primary transition-colors duration-300">About</button>
+              <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Services</button>
+              <button onClick={() => scrollToSection('contact')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Contact</button>
             </nav>
             <button
               className="md:hidden text-white"
@@ -156,15 +164,15 @@ export default function Component() {
 
       {isMenuOpen && (
         <nav className="md:hidden fixed top-16 left-0 right-0 glass-card p-4 z-40 border-t border-white/10">
-          <a href="#" className="block py-3 text-sm font-medium hover:text-primary transition-colors duration-300">Home</a>
-          <a href="#" className="block py-3 text-sm font-medium hover:text-primary transition-colors duration-300">About</a>
-          <a href="#" className="block py-3 text-sm font-medium hover:text-primary transition-colors duration-300">Services</a>
-          <a href="#" className="block py-3 text-sm font-medium hover:text-primary transition-colors duration-300">Contact</a>
+          <button onClick={() => scrollToSection('home')} className="block w-full text-left py-3 text-sm font-medium hover:text-primary transition-colors duration-300">Home</button>
+          <button onClick={() => scrollToSection('about')} className="block w-full text-left py-3 text-sm font-medium hover:text-primary transition-colors duration-300">About</button>
+          <button onClick={() => scrollToSection('services')} className="block w-full text-left py-3 text-sm font-medium hover:text-primary transition-colors duration-300">Services</button>
+          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-3 text-sm font-medium hover:text-primary transition-colors duration-300">Contact</button>
         </nav>
       )}
 
       <main>
-        <section className="relative min-h-screen flex items-center justify-center hero-gradient pt-20">
+        <section id="home" className="relative min-h-screen flex items-center justify-center hero-gradient pt-20">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -188,6 +196,7 @@ export default function Component() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection('services')}
                 className="bg-primary hover:bg-primary-hover text-white font-bold py-4 px-8 rounded-full text-lg transition-colors duration-300 flex items-center mx-auto"
               >
                 Explore Our Work <ArrowRight size={24} className="ml-2" />
@@ -196,7 +205,26 @@ export default function Component() {
           </div>
         </section>
 
-        <section className="py-24 bg-secondary/20">
+        <section id="about" className="py-24">
+          <div className="container mx-auto px-6">
+            <FadeInWhenVisible>
+              <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
+            </FadeInWhenVisible>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {offerings.map((offering, index) => (
+                <FadeInWhenVisible key={index} delay={index * 0.1}>
+                  <div className="glass-card p-8 rounded-2xl text-center">
+                    <span className="text-4xl mb-4 block">{offering.icon}</span>
+                    <h3 className="text-xl font-bold mb-3">{offering.title}</h3>
+                    <p className="text-gray-400">{offering.description}</p>
+                  </div>
+                </FadeInWhenVisible>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="py-24 bg-secondary/20">
           <div className="container mx-auto px-6">
             <FadeInWhenVisible>
               <h2 className="text-4xl font-bold text-center mb-16">Our Latest Work</h2>
@@ -229,25 +257,6 @@ export default function Component() {
         <section className="py-24">
           <div className="container mx-auto px-6">
             <FadeInWhenVisible>
-              <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
-            </FadeInWhenVisible>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {offerings.map((offering, index) => (
-                <FadeInWhenVisible key={index} delay={index * 0.1}>
-                  <div className="glass-card p-8 rounded-2xl text-center">
-                    <span className="text-4xl mb-4 block">{offering.icon}</span>
-                    <h3 className="text-xl font-bold mb-3">{offering.title}</h3>
-                    <p className="text-gray-400">{offering.description}</p>
-                  </div>
-                </FadeInWhenVisible>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24 bg-secondary/20">
-          <div className="container mx-auto px-6">
-            <FadeInWhenVisible>
               <h2 className="text-4xl font-bold text-center mb-16">Our Process</h2>
             </FadeInWhenVisible>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -265,7 +274,7 @@ export default function Component() {
         </section>
       </main>
 
-      <footer className="glass-card py-16 px-6">
+      <footer id="contact" className="glass-card py-16 px-6">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to bring your vision to life?</h2>
           <motion.button
