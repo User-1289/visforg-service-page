@@ -225,7 +225,7 @@ export default function Component() {
           </div>
         </section>
 
-        <section id="services" className="py-24 bg-secondary/20">
+        <section id="works" className="py-24 bg-secondary/20">
           <div className="container mx-auto px-6">
             <FadeInWhenVisible>
               <h2 className="text-4xl font-bold text-center mb-16">Our Works</h2>
