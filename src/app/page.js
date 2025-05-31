@@ -148,8 +148,8 @@ export default function Component() {
             </div>
             <nav className="hidden md:flex space-x-8">
               <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Home</button>
-              <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-primary transition-colors duration-300">About</button>
               <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Services</button>
+                <button onClick={() => scrollToSection('process')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Our Process</button>
               <button onClick={() => scrollToSection('contact')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Contact</button>
             </nav>
             <button
@@ -254,7 +254,7 @@ export default function Component() {
           </div>
         </section>
 
-        <section className="py-24">
+        <section className="py-24" id="process">
           <div className="container mx-auto px-6">
             <FadeInWhenVisible>
               <h2 className="text-4xl font-bold text-center mb-16">Our Process</h2>
