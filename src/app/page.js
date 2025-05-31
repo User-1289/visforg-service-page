@@ -228,7 +228,7 @@ export default function Component() {
         <section id="services" className="py-24 bg-secondary/20">
           <div className="container mx-auto px-6">
             <FadeInWhenVisible>
-              <h2 className="text-4xl font-bold text-center mb-16">Our Latest Work</h2>
+              <h2 className="text-4xl font-bold text-center mb-16">Our Works</h2>
             </FadeInWhenVisible>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
