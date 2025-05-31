@@ -150,7 +150,7 @@ export default function Component() {
               <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Home</button>
               <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Services</button>
                 <button onClick={() => scrollToSection('process')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Our Process</button>
-                                  <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Our Works</button>
+                                  <button onClick={() => scrollToSection('works')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Our Works</button>
               <button onClick={() => scrollToSection('contact')} className="text-sm font-medium hover:text-primary transition-colors duration-300">Contact</button>
             </nav>
             <button
