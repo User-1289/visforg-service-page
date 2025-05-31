@@ -10,6 +10,16 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        "primary-hover": "var(--primary-hover)",
+        secondary: "var(--secondary)",
+      },
+      container: {
+        center: true,
+        padding: "2rem",
+        screens: {
+          "2xl": "1400px",
+        },
       },
     },
   },
