@@ -10,7 +10,7 @@ import { ChevronRight, Menu, X, ArrowRight } from 'lucide-react'
 const services = [
   {
     title: 'Product Visualization for Tablet',
-    description: '3D Product Visualization: A sleek and dynamic video showcasing a study-purpose tablet. This visualization highlights the tablet's features and design.',
+    description: '3D Product Visualization: A sleek and dynamic video showcasing a study-purpose tablet. This visualization highlights the tablet\'s features and design.',
     url: 'https://youtu.be/HEiExhAbZik',
     iframe: 'https://www.youtube.com/embed/HEiExhAbZik'
   },
