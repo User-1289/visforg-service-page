@@ -8,6 +8,12 @@ import { useInView } from 'react-intersection-observer'
 import { ChevronRight, Menu, X, ArrowRight } from 'lucide-react'
 
 const services = [
+    {
+    title: 'Product Demo For AI Hair Treatment App',
+    description: "A sleek product demo for the app.",
+    url: 'https://drive.google.com/file/d/1KANMxVAaja5voI5EyMOnYpcVRR9z4H6b/view?usp=sharing',
+    iframe:'https://drive.google.com/file/d/1KANMxVAaja5voI5EyMOnYpcVRR9z4H6b/preview'
+  },
   {
     title: 'Product Visualization for Tablet',
     description: "3D Product Visualization: A sleek and dynamic video showcasing a study-purpose tablet. This visualization highlights the tablet's features and design.",
